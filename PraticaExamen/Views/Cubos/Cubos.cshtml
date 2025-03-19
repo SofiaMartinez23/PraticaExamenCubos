@@ -1,0 +1,31 @@
+﻿@model List<Cubo>
+
+<div class="row">
+    @foreach (Cubo cubo in Model)
+    {
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/@cubo.Imagen" />
+                <div class="card-body">
+                    <h5 class="card-title">@cubo.Nombre</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="btn btn-primary w-100"
+                               asp-controller="Cubos" asp-action="Details"
+                               asp-route-idcubo="@cubo.IdCubo">
+                                Detalles
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a class="btn btn-danger w-100"
+                               asp-controller="Cubos" asp-action="ComprarCubo"
+                               asp-route-idcubo="@cubo.IdCubo">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

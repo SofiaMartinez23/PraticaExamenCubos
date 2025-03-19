@@ -1,0 +1,31 @@
+﻿@model List<VistaCompra>
+
+<h1>Pedidos del Usuario</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre Usuario</th>
+            <th>Imagen Cubo</th>
+            <th>Nombre Cubo</th>
+            <th>Fecha de Compra</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Precio Final</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (VistaCompra compra in Model)
+        {
+            <tr>
+                <td>@compra.NombreUsuario</td>
+                <td><img class="w-75" src="~/images/@compra.ImagenCubo" /></td>
+                <td>@compra.NombreCubo</td>
+                <td>@compra.FechaCompra.ToString("dd/MM/yyyy")</td>
+                <td>@compra.PrecioCubo €</td>
+                <td>@compra.Cantidad</td>
+                <td>@compra.PrecioFinal €</td>
+            </tr>
+        }
+    </tbody>
+</table>

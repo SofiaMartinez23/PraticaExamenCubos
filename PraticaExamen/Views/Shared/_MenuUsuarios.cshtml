@@ -1,0 +1,30 @@
+﻿<partial name="_NumeroCubos" />
+@if (!Context.User.Identity.IsAuthenticated)
+{
+    <li class="nav-item">
+        <a asp-controller="Cubos"
+           asp-action="Index"
+           class="nav-link">
+            Login
+        </a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a asp-controller="Cubos"
+           asp-action="Index"
+           class="nav-link">
+            <img class="rounded-circle" style="width:25px;height:25px"
+                 src="~/images/@Context.User.FindFirst("FOTO").Value" />
+            Hola, @Context.User.FindFirst("NOMBRE").Value
+        </a>
+    </li>
+    <li class="nav-item">
+        <a asp-controller="Managed"
+           asp-action="Logout"
+           class="nav-link">
+            Cerrar sesión
+        </a>
+    </li>
+}

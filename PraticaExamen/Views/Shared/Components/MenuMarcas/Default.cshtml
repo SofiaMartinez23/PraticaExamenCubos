@@ -1,0 +1,19 @@
+﻿@model List<Marca>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+        Marcas
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (Marca marca in Model)
+        {
+            <li>
+                <a class="dropdown-item"
+                   asp-controller="Cubos" asp-action="Cubos"
+                   asp-route-idmarca="@marca.IdMarca">
+                    @marca.Nombre
+                </a>
+            </li>
+        }
+    </ul>
+</li>

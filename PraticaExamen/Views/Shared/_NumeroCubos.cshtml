@@ -1,0 +1,19 @@
+﻿
+@{
+    List<int> carrito = Context.Session.GetObject<List<int>>("CARRITO");
+    int cubos = 0;
+    if (carrito != null) cubos = carrito.Count();
+}
+<li class="nav-item">
+    <span class="nav-link">
+        Cubos: @cubos
+    </span>
+</li>
+@if (cubos > 0)
+{
+    <li class="nav-item">
+        <a asp-controller="Cubos" asp-action="Carrito" class="nav-link">
+            Ver carrito
+        </a>
+    </li>
+}

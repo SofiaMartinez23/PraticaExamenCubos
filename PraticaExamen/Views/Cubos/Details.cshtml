@@ -1,0 +1,21 @@
+﻿@model Cubo
+
+<div class="row my-3">
+    <div class="col-4">
+        <img class="w-100" src="~/images/@Model.Imagen" />
+    </div>
+    <div class="col-8">
+        <h1>@Model.Nombre</h1>
+        <h2>@Model.Modelo</h2>
+        <h3>Precio: @Model.Precio€</h3>
+    </div>
+</div>
+
+<h5>Descripción</h5>
+<p>Aquí puedes agregar detalles o características adicionales del cubo.</p>
+
+<a asp-controller="Cubos"
+   asp-action="ComprarCubo" asp-route-idcubo="@Model.IdCubo"
+   class="btn btn-dark">
+    Comprar
+</a>
